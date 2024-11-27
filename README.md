@@ -17,7 +17,7 @@ The Library Catalog Management System is a desktop application written in C++ us
   Delete records of books no longer needed.
 
 - **Search Functionality**  
-  Quickly search for books by Title, Author, or ISBN using a B-tree for optimized lookups.
+  Quickly search for books by Title or ISBN using a B-tree for optimized lookups.
 
 - **Persistent Data Storage**  
   Ensures data is saved and recoverable using an SQLite database, with a B-tree for real-time memory operations.
