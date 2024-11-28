@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    BTree.h \
     mainwindow.h
 
 FORMS += \
