@@ -288,4 +288,33 @@ public:
             delete tmp;
         }
     }
+    int BTree<T, ORDER>::modifyBook(std::string isbn, const std::string& newTitle, const std::string& newAuthor, const std::string& newDate) {
+        // Use the search function to find the node containing the book with the given ISBN
+        Book searchBook("", "", isbn, "");
+        BTreeNode<T, ORDER>* node = search(searchBook);  // search function should return the node containing the book
+        if (node != nullptr) {
+            // Loop through the node's keys to find the specific book by ISBN
+            Book* bookToModify = nullptr;
+            for (int i = 0; i < node->n; ++i) {
+                if (node->keys[i].getISBN() == isbn) {
+                    bookToModify = &node->keys[i]; // Found the book to modify
+                    break;
+                }
+            }
+            std::cout << bookToModify->getAuthor() << std::endl;
+            // If the book is found, modify the book's details
+            if (bookToModify != nullptr) {
+                if (!newTitle.empty()) {
+                    bookToModify->setTitle(newTitle);
+                }
+                if (!newAuthor.empty()) {
+                    bookToModify->setAuthor(newAuthor);
+                }
+                if (!newDate.empty()) {
+                    bookToModify->setDate(newDate);
+                }
+                return 1;
+            }
+        }
+    }
 };
