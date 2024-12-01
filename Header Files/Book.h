@@ -7,11 +7,11 @@ class Book {
 public:
     std::string title;
     std::string author;
-    std::string isbn;
+    int isbn;
     std::string date;
 
     // Constructor
-    Book(std::string title = "", std::string author = "", std::string isbn = "", std::string date="");
+    Book(std::string title = "", std::string author = "", int isbn = 0, std::string date="");
 
     // Comparison operators for sorting based on ISBN
     bool operator<(const Book& other) const;
@@ -21,13 +21,13 @@ public:
     // Getters
     std::string getTitle() const;
     std::string getAuthor() const;
-    std::string getISBN() const;
+    int getISBN() const;
     std::string getDate() const;
 
     // Setters
     void setTitle(const std::string& newTitle);
     void setAuthor(const std::string& newAuthor);
-    void setISBN(const std::string& newISBN);
+    void setISBN(int newISBN);
     void setDate(const std::string& newDate);
 
     // Display function

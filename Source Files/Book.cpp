@@ -1,7 +1,7 @@
 #include "Book.h"
 #include <iostream>
 
-Book::Book(std::string title, std::string author, std::string isbn, std::string date)
+Book::Book(std::string title, std::string author, int isbn, std::string date)
     : title(title), author(author), isbn(isbn), date(date) {}
 
 bool Book::operator<(const Book& other) const {
@@ -27,7 +27,7 @@ std::string Book::getAuthor() const {
 }
 
 // Getter for ISBN
-std::string Book::getISBN() const {
+int Book::getISBN() const {
     return isbn;
 }
 
@@ -47,7 +47,7 @@ void Book::setAuthor(const std::string& newAuthor) {
 }
 
 // Setter for ISBN
-void Book::setISBN(const std::string& newISBN) {
+void Book::setISBN(int newISBN) {
     isbn = newISBN;
 }
 
