@@ -1,41 +1,8 @@
 #include <iostream>
 #include <string>
+#include "Book.h"
+
 using namespace std;
-
-// Book class to store book information
-class Book {
-public:
-    string title;
-    string author;
-    string isbn;
-
-    // Constructor
-    Book(string title = "", string author = "", string isbn = "")
-        : title(title), author(author), isbn(isbn) {}
-
-    // Comparison operators for sorting based on ISBN
-    bool operator<(const Book& other) const {
-        return isbn < other.isbn;
-    }
-
-    bool operator>(const Book& other) const {
-        return isbn > other.isbn;
-    }
-
-    bool operator==(const Book& other) const {
-        return isbn == other.isbn;
-    }
-
-    void display() const {
-        cout << "Title: " << title << ", Author: " << author << ", ISBN: " << isbn << endl;
-    }
-    string getTitle() {
-        return title;
-    }
-    string getAuthor() {
-        return author;
-    }
-};
 
 // Node class for B-Tree
 template <typename T, int ORDER>
