@@ -1,5 +1,4 @@
 #include "BTree.h"
-#include "DatabaseHandler.h"
 
 // Function to display the main menu
 void displayMenu() {
@@ -15,9 +14,6 @@ void displayMenu() {
 
 int main() {
     BTree<Book, 1000> bookTree;
-    Database db("library_catalog.db")
-
-    db.loadBooksIntoTree(bookTree)
 
     // Insert books into the tree
     int choice;
@@ -58,15 +54,18 @@ int main() {
             int isbn;
             cout << "\nEnter book title: ";
             getline(cin, title);
+            
             cout << "Enter book author: ";
             getline(cin, author);
+            
             cout << "Enter book ISBN: ";
             getline(cin, word);
             isbn = stoi(word);
+            
             cout << "Enter book publication date: ";
             getline(cin, date);
+            
             bookTree.insert(Book(title, author, isbn, date));
-            db.insertBook(Book(title, author, isbn, date));
             cout << "Book inserted successfully.\n";
             break;
         }
@@ -83,7 +82,6 @@ int main() {
             }
             else {
                 bookTree.remove(removeBook);
-                db.deleteBook(isbn);
                 cout << "Book removed successfully.\n";
             }
             break;
@@ -109,7 +107,6 @@ int main() {
             if (val == 1)
             {
                 std::cout << "Book details updated successfully!" << std::endl;
-                dbHandler.updateBook(isbn, title, author, newIsbn, date);
             }
             else {
                 cout << "Book was not found" << std::endl;
