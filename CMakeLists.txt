@@ -14,5 +14,7 @@ include_directories("Header Files")
 # Add executable with source files
 add_executable(LibraryCatalogManagementSystem 
     "Source Files/Book.cpp"
+    LibraryCatalogManagementSystem
+    "Source Files/DatabaseHandler.cpp"
     "main.cpp"
 )
